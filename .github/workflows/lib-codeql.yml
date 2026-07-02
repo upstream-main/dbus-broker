@@ -50,8 +50,9 @@ jobs:
       uses: actions/checkout@v7
 
     - name: "Initialize CodeQL"
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@v4
       with:
+        build-mode: "manual"
         config-file: "./.github/codeql-config.yml"
         languages: "cpp"
 
@@ -70,4 +71,4 @@ jobs:
           -C "./build"
 
     - name: "Perform CodeQL Analysis"
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@v4
